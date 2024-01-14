@@ -14,7 +14,7 @@ function App() {
   let buttons = {
     numButtons: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
     calculations: ["+", "-", "*", "/", "%"],
-    otherButtons: ["←", "Clear", "="],
+    otherButtons: ["Clear", "=", "←"],
   };
   return (
     <div className="w-100 bg-primary">
@@ -52,6 +52,16 @@ function App() {
                   value={inputValue}
                 ></input>
                 <div className="row align-items-center justify-content-center bg-light mt-3 rounded m-0">
+                  {buttons.otherButtons.map((item, index) => (
+                    <div key={index} className="col-4 p-0 text-center">
+                      <button
+                        className="btn btn-danger w-75 my-2"
+                        onClick={() => dispatch(clearEqualBackSpace(item))}
+                      >
+                        {item}
+                      </button>
+                    </div>
+                  ))}
                   {buttons.numButtons.map((item, index) => (
                     <div key={index} className="col-4 p-0 text-center">
                       <button
@@ -67,16 +77,6 @@ function App() {
                       <button
                         className="btn btn-warning w-75 my-2"
                         onClick={() => dispatch(calculations(item))}
-                      >
-                        {item}
-                      </button>
-                    </div>
-                  ))}
-                  {buttons.otherButtons.map((item, index) => (
-                    <div key={index} className="col-4 p-0 text-center">
-                      <button
-                        className="btn btn-danger w-75 my-2"
-                        onClick={() => dispatch(clearEqualBackSpace(item))}
                       >
                         {item}
                       </button>
