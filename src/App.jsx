@@ -12,7 +12,7 @@ function App() {
   let dispatch = useDispatch();
 
   let buttons = {
-    numButtons: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
+    numButtons: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "00", "."],
     calculations: ["+", "-", "*", "/", "%"],
     otherButtons: ["Clear", "=", "←"],
   };
@@ -51,7 +51,7 @@ function App() {
                   className="form-control"
                   value={inputValue}
                 ></input>
-                <div className="row align-items-center justify-content-center bg-light mt-3 rounded m-0">
+                <div className="row align-items-center bg-light mt-3 rounded m-0">
                   {buttons.otherButtons.map((item, index) => (
                     <div key={index} className="col-4 p-0 text-center">
                       <button
