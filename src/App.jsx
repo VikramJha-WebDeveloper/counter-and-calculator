@@ -32,7 +32,7 @@ function App() {
                 <input
                   type="text"
                   className="form-control mx-3 text-center"
-                  value={myState}
+                  value={myState.counter}
                 ></input>
                 <button
                   className="btn btn-dark"

@@ -1,10 +1,10 @@
 //Reducer for counter
-export let changeTheNumber = (state = 0, action) => {
+export let changeTheNumber = (state = { counter: 0 }, action) => {
   switch (action.type) {
     case "INCREMENT":
-      return state + action.payload;
+      return { counter: state.counter + action.payload };
     case "DECREMENT":
-      return state - action.payload;
+      return { counter: state.counter - action.payload };
     default:
       return state;
   }
